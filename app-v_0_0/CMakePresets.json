@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 20
+    },
+    "configurePresets": [
+        {
+            "name": "build",
+            "displayName": "Build for nRF52833 DK nRF52833",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "NCS_TOOLCHAIN_VERSION": "NONE",
+                "BOARD": "nrf52833dk_nrf52833",
+                "CONF_FILE": "prj.conf",
+                "EXTRA_CONF_FILE": "overlay-logging.conf",
+                "EXTRA_DTC_OVERLAY_FILE": "..\\boards\\arm\\bc833m_nrf52833\\bc833m_nrf52833_0_1_0.overlay"
+            }
+        }
+    ]
+}

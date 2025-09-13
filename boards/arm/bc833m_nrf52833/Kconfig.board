@@ -1,0 +1,6 @@
+# Copyright (c) 2024 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_BC833M_NRF52833
+	bool "BC833M nRF52833"
+	depends on SOC_NRF52833_QIAA

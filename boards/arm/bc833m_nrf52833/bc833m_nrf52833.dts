@@ -1,0 +1,91 @@
+// Copyright (c) 2024 Nordic Semiconductor ASA
+// SPDX-License-Identifier: Apache-2.0
+
+/dts-v1/;
+#include <nordic/nrf52833_qiaa.dtsi>
+#include "bc833m_nrf52833.dtsi"
+
+/ {
+	model = "BC833M nRF52833";
+	compatible = "SUBC,bc833m-nrf52833";
+
+	chosen {
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+		zephyr,code-partition = &slot0_partition;
+		zephyr,console = &uart0;
+		zephyr,shell-uart = &uart0;
+		zephyr,uart-mcumgr = &uart0;
+		zephyr,ieee802154 = &ieee802154;
+		zephyr,entropy = &rng;
+	};
+
+
+};
+
+&ieee802154 {
+	status = "okay";
+};
+
+
+&flash0 {
+
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		boot_partition: partition@0 {
+			label = "mcuboot";
+			reg = <0x00000000 0xC000>;
+		};
+		slot0_partition: partition@c000 {
+			label = "image-0";
+			reg = <0x0000C000 0x37000>;
+		};
+		slot1_partition: partition@43000 {
+			label = "image-1";
+			reg = <0x00043000 0x37000>;
+		};
+		storage_partition: partition@7a000 {
+			label = "storage";
+			reg = <0x0007A000 0x00006000>;
+		};
+	};
+};
+
+&uart0 {
+	status = "okay";
+	compatible = "nordic,nrf-uart";
+	pinctrl-0 = <&uart0_default>;
+	pinctrl-1 = <&uart0_sleep>;
+	pinctrl-names = "default", "sleep";
+	current-speed = <115200>;
+};
+
+my_spi_slave: &spi1 {
+	compatible = "nordic,nrf-spis";
+	status = "okay";
+	pinctrl-0 = <&spi_slave_default>;
+	pinctrl-1 = <&spi_slave_sleep>;
+	pinctrl-names = "default", "sleep";
+	def-char = <0x0>;
+};
+
+&clock {
+	status = "okay";
+};
+
+&gpiote {
+    status = "okay";
+};
+
+&gpio0 {
+    status = "okay";
+    gpiote-instance = <&gpiote>;
+};
+
+&gpio1 {
+    status = "okay";
+    gpiote-instance = <&gpiote>;
+};

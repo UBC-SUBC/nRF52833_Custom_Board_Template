@@ -1,0 +1,11 @@
+# Generated file that can be used to preload variant images
+set(BOARD "bc833m_nrf52833" CACHE INTERNAL "NCS child image controlled")
+set(BOARD_ROOT "/home/thomas/SUBC/nRF52833_Custom_Board_Template;/home/thomas/ncs/v2.6.0/nrf;/home/thomas/ncs/v2.6.0/zephyr" CACHE INTERNAL "NCS child image controlled")
+set(CACHED_CONF_FILE "/home/thomas/SUBC/nRF52833_Custom_Board_Template/app-v_0_0/prj.conf" CACHE INTERNAL "NCS child image controlled")
+set(CONF_FILE_BUILD_TYPE "" CACHE INTERNAL "NCS child image controlled")
+set(DTC_OVERLAY_FILE "" CACHE INTERNAL "NCS child image controlled")
+set(EXTRA_CONF_FILE "/home/thomas/SUBC/nRF52833_Custom_Board_Template/app-v_0_0/overlay-logging.conf" CACHE INTERNAL "NCS child image controlled")
+set(EXTRA_DTC_OVERLAY_FILE "/home/thomas/SUBC/nRF52833_Custom_Board_Template/boards/arm/bc833m_nrf52833/bc833m_nrf52833_0_1_0.overlay" CACHE INTERNAL "NCS child image controlled")
+set(EXTRA_DTC_OVERLAY_FILE "/home/thomas/SUBC/nRF52833_Custom_Board_Template/boards/arm/bc833m_nrf52833/bc833m_nrf52833_0_1_0.overlay" CACHE INTERNAL "NCS child image controlled")
+set(NCS_TOOLCHAIN_VERSION "NONE" CACHE INTERNAL "NCS child image controlled")
+set(WEST_PYTHON "/home/thomas/ncs/toolchains/2be090971e/usr/local/bin/python3.9" CACHE INTERNAL "NCS child image controlled")

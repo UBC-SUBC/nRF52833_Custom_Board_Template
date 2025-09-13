@@ -1,0 +1,16 @@
+# Copyright (c) 2024 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_BC833M_NRF52833
+
+config BOARD
+	default "bc833m_nrf52833"
+
+config BT_CTLR
+   default BT
+
+config BC833_HW_VERSION_0_1_0
+	bool "Selected hardware 0.1.0"
+	default n
+
+endif
